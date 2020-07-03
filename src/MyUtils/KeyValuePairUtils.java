@@ -10,6 +10,7 @@ public final class KeyValuePairUtils {
 		KEY, VALUE
 	}
 
+	// Gets either the key or value
 	static Integer getKeyValue(Pair<Integer, Integer> pair, KeyValuePair target) {
 		if (target == KeyValuePair.KEY) {
 			return pair.left;
@@ -86,7 +87,8 @@ public final class KeyValuePairUtils {
 		return filter(listWithoutSmallest, secondSmallest, new NotEqualCheck(), target);
 	}
 
-	// Gets the smallest of two pairs
+	// Gets the smallest (either key or value, represented by the target parameter)
+	// of two pairs
 	static Pair<Integer, Integer> min(Pair<Integer, Integer> a, Pair<Integer, Integer> b, KeyValuePair target) {
 		if (getKeyValue(a, target) < getKeyValue(b, target)) {
 			return a;
